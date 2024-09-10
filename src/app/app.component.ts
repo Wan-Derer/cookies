@@ -124,8 +124,11 @@ export class AppComponent {
   // constructor(private fb: FormBuilder) {
   // }
 
-  scrollTo(target: HTMLElement) {
+  scrollTo(target: HTMLElement, product?: any) {
     target.scrollIntoView({behavior: 'smooth'});
+    if (product) {
+      this.form.patchValue({product: product.title + ' (' + product.price + ' ' + this.currency + ')'});
+    }
   }
 
   changeCurrency() {
@@ -155,7 +158,7 @@ export class AppComponent {
   }
 
   confirmOrder() {
-    if (this.form.valid){
+    if (this.form.valid) {
       alert('Спасибо за заказ! Мы скоро свяжемся с вами!');
       this.form.reset();
     }
