@@ -81,4 +81,9 @@ export class AppComponent {
     }
   }
 
+  switchSugarFree(event: any) {
+    this.http.get('https://testologia.ru/cookies' + (event.currentTarget.checked ? '?sugarfree' : ''))
+      .subscribe(data => this.productsData = data);
+  }
+
 }
