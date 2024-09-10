@@ -47,7 +47,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/cookies/"
+              "baseHref": "/cookies-site/"
             },
             "development": {
               "optimization": false,
